@@ -25,8 +25,8 @@ class LSrouter(Router):
         #   add your own class fields and initialization code here
         self.seq_num = 0
         self.topology = {self.addr: {'links': {}, 'seq_num': 0}}
-        self.forwarding_table = {}
-        self.links_data = {}
+        self.forwarding_table = {} ##dest = port
+        self.links_data = {} #{port: (endpoint, cost]}
     def dijkstra(self):
         f = {}
         for addr in self.topology: f[addr] = 360000
